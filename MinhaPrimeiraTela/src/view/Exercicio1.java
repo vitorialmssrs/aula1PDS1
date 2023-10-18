@@ -86,7 +86,7 @@ public class Exercicio1 extends JFrame {
 				JOptionPane.showMessageDialog(null, "A temperatura convertida é  "+ tempC);
 			}
 		});
-		btnCalcular.setBounds(208, 193, 89, 23);
+		btnCalcular.setBounds(223, 190, 89, 23);
 		contentPane.add(btnCalcular);
 		
 		JLabel lblMensagemdeInformação = new JLabel("Esse programa faz a conversão de Farenheit para Celsius");
