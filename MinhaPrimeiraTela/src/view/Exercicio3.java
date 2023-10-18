@@ -22,7 +22,7 @@ public class Exercicio3 extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textCaixaValor1;
-	private JTextField textField;
+	private JTextField textAltura;
 
 	/**
 	 * Launch the application.
@@ -67,10 +67,10 @@ public class Exercicio3 extends JFrame {
 		lblDigitarValor.setBounds(21, 114, 152, 13);
 		contentPane.add(lblDigitarValor);
 		
-		textField = new JTextField();
-		textField.setBounds(183, 160, 126, 19);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textAltura = new JTextField();
+		textAltura.setBounds(183, 160, 126, 19);
+		contentPane.add(textAltura);
+		textAltura.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Digite a altura");
 		lblNewLabel.setFont(new Font("Arial", Font.ITALIC, 14));
@@ -82,7 +82,7 @@ public class Exercicio3 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
 				String valorBase = textCaixaValor1.getText() ;
-				String valorAltura = textField.getText();
+				String valorAltura = textAltura.getText();
 				//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
 				float baseConvertida = Float.valueOf(valorBase);
 				float alturaConvertida = Float.valueOf(valorAltura);
