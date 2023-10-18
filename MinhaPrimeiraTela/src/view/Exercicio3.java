@@ -68,7 +68,7 @@ public class Exercicio3 extends JFrame {
 		contentPane.add(lblDigitarValor);
 		
 		textAltura = new JTextField();
-		textAltura.setBounds(183, 160, 126, 19);
+		textAltura.setBounds(183, 160, 126, 19);//setBound são as cordenadas dos componentes(posição, largura, comprimento,)
 		contentPane.add(textAltura);
 		textAltura.setColumns(10);
 		
