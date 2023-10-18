@@ -78,7 +78,7 @@ public class Exercicio1 extends JFrame {
 				String tempDigitada = txtTextoTemperatura.getText();
 				//precisa converter a temperatura de string pra float 
 				float temConvertidaF = Float.valueOf(tempDigitada);
-				//criar objeto conversao temperatura 
+				//criar objeto conversao temperatura chamando a classe chamando primeiro a classe depois os metodos 
 				ConversaoTemperatura conv = new ConversaoTemperatura();
 				//chamar metodo conversao 
 				float tempC = conv.converterFtoC(temConvertidaF);

@@ -83,6 +83,7 @@ public class Exercicio2 extends JFrame {
 				String exibirNome = textPrimeiroNome.getText();
 				String exibirSobrenome = textSobrenome.getText();
 				//ira mostrar a tela com o que foi digitado, e houve uma concatenação para mostrar a informação
+				//usa as variaveis que jogou a informação para colocar e puxar as informações para mostrar
 				JOptionPane.showMessageDialog(null, "O nome e sobrenome digitado é: "+exibirNome+ " " +exibirSobrenome);	
 				
 			}

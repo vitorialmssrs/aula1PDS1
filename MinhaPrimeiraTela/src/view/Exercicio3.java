@@ -5,7 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.RetanguloEx3;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -75,6 +80,24 @@ public class Exercicio3 extends JFrame {
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
+				String valorBase = textCaixaValor1.getText() ;
+				String valorAltura = textField.getText();
+				//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
+				float baseConvertida = Float.valueOf(valorBase);
+				float alturaConvertida = Float.valueOf(valorAltura);
+				//chamar o metodo criado 
+				RetanguloEx3 contas = new RetanguloEx3 ();
+				
+				//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
+				float resultadoArea = contas.calculoArea(baseConvertida, alturaConvertida);
+				float resultadoPerimetro = contas.calculoPerimetro (baseConvertida, alturaConvertida);
+				
+						
+
+				//para mostrar as informações agora 
+				JOptionPane.showMessageDialog(null, "O valor do Perimetro  e da área são: "+resultadoPerimetro + " "+ resultadoArea);
+				
 			}
 		});
 		btnCalcular.setFont(new Font("Arial", Font.BOLD, 12));
