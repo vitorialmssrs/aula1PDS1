@@ -89,12 +89,7 @@ public class Exercicio2 extends JFrame {
 			}
 		});
 		btnAvancar.setFont(new Font("Arial", Font.BOLD, 12));
-		btnAvancar.setBounds(287, 224, 85, 21);
+		btnAvancar.setBounds(211, 222, 85, 21);
 		contentPane.add(btnAvancar);
-		
-		JButton btnLimpar = new JButton("Limpar");
-		btnLimpar.setFont(new Font("Arial", Font.BOLD, 12));
-		btnLimpar.setBounds(128, 224, 85, 21);
-		contentPane.add(btnLimpar);
 	}
 }

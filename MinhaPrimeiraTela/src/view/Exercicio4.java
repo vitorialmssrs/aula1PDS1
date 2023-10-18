@@ -91,7 +91,7 @@ public class Exercicio4 extends JFrame {
 			}
 		});
 		btnCalcular.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnCalcular.setBounds(180, 193, 85, 21);
+		btnCalcular.setBounds(209, 192, 85, 21);
 		contentPane.add(btnCalcular);
 		
 		JLabel lblValordigitar = new JLabel("Digite o valor da gasolina");
