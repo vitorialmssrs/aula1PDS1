@@ -6,10 +6,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Exercicio2 extends JFrame {
 
@@ -73,6 +77,16 @@ public class Exercicio2 extends JFrame {
 		textSobrenome.setColumns(10);
 		
 		JButton btnAvancar = new JButton("Avançar");
+		btnAvancar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//a variável recebe o texto digitado
+				String exibirNome = textPrimeiroNome.getText();
+				String exibirSobrenome = textSobrenome.getText();
+				//ira mostrar a tela com o que foi digitado, e houve uma concatenação para mostrar a informação
+				JOptionPane.showMessageDialog(null, "O nome e sobrenome digitado é: "+exibirNome+ " " +exibirSobrenome);	
+				
+			}
+		});
 		btnAvancar.setFont(new Font("Arial", Font.BOLD, 12));
 		btnAvancar.setBounds(287, 224, 85, 21);
 		contentPane.add(btnAvancar);
