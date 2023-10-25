@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import src.model.FormSobre;
 import src.model.Investimento;
 
 import java.awt.GridLayout;
@@ -58,6 +59,12 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		menuBar.add(mnAjuda);
 		
 		JMenuItem mntmSobre = new JMenuItem("Sobre");
+		mntmSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FormSobre janela = new FormSobre();
+				janela.setVisible(true);
+			}
+		});
 		mnAjuda.add(mntmSobre);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
