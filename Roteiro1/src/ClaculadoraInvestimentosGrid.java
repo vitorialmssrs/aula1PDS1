@@ -128,6 +128,9 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.add(panel_5);
 		panel_5.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
+		JLabel lblresultado = new JLabel("");
+		panel_5.add(lblresultado);
+		
 		JPanel panel_8 = new JPanel();
 		contentPane.add(panel_8);
 		panel_8.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
@@ -159,8 +162,8 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 				//variavel para por o metodo da classe e ja chama o metodo
 				double resTodos = cal.calculaTotal();
 				 
-				//mostrar na tela 
-				JOptionPane.showMessageDialog(null, "O total investidos com juros é:  "+ resTodos);
+				//mostrar na tela sem se a telinha que mostra as resposta
+				lblresultado.setText( ""+ resTodos);
 				
 				
 			}

@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FormSobre extends JFrame {
 
@@ -34,13 +37,13 @@ public class FormSobre extends JFrame {
 	 */
 	public FormSobre() {
 		setTitle("Sobre o CalcInvest");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 433, 231);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(4, 1, 0, 0));
+		contentPane.setLayout(new GridLayout(5, 1, 0, 0));
 		
 		JLabel lblCalcInvest = new JLabel("Calc Invest - Calculadora de Investimento");
 		contentPane.add(lblCalcInvest);
@@ -53,6 +56,17 @@ public class FormSobre extends JFrame {
 		
 		JLabel lblContato = new JLabel("Contato: vitoria.ls10@aluno.ifsc.edu.br");
 		contentPane.add(lblContato);
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
+		
+		JButton btnOk = new JButton("Ok");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
+		panel.add(btnOk);
 	}
 
 }
