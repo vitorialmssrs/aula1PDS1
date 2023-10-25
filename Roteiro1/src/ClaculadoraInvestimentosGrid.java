@@ -5,8 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import src.model.Investimento;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -17,9 +21,9 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField textDeposito;
+	private JTextField textNumMeses;
+	private JTextField textJuros;
 
 	/**
 	 * Launch the application.
@@ -60,9 +64,9 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.add(panel_7);
 		panel_7.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		textField = new JTextField();
-		panel_7.add(textField);
-		textField.setColumns(10);
+		textDeposito = new JTextField();
+		panel_7.add(textDeposito);
+		textDeposito.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
@@ -75,9 +79,9 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.add(panel_2);
 		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		textField_1 = new JTextField();
-		panel_2.add(textField_1);
-		textField_1.setColumns(10);
+		textNumMeses = new JTextField();
+		panel_2.add(textNumMeses);
+		textNumMeses.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
@@ -90,9 +94,9 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.add(panel_4);
 		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		textField_2 = new JTextField();
-		panel_4.add(textField_2);
-		textField_2.setColumns(10);
+		textJuros = new JTextField();
+		panel_4.add(textJuros);
+		textJuros.setColumns(10);
 		
 		JPanel panel_9 = new JPanel();
 		contentPane.add(panel_9);
@@ -120,6 +124,26 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		panel_10.add(btnCalcular);
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			
+				//pegar a mensagem digitada no componente texto a gente quer chamar o metodo conversão temperatura e 
+				String depDigitado = textDeposito.getText();
+				String mesesDigitados = textNumMeses.getText();
+				 String jurosDigitados = textJuros.getText();
+			
+				//precisa converter a Mensagem de string pra int e double (f) formatada
+				int MesesDigitadosf = Integer.parseInt(depDigitado);
+				double  DepDigitadof = Double.parseDouble(mesesDigitados);
+				double JurosDigitadosf = Double.parseDouble(jurosDigitados);
+				
+				//criar objeto para mostrar a mensagem chamando a classe chamando primeiro a classe depois os metodos (ob objeto criado) (resTodos) 
+				Investimento cal = new Investimento(MesesDigitadosf, DepDigitadof,JurosDigitadosf);
+				//variavel para por o metodo da classe e ja chama o metodo
+				double resTodos = cal.calculaTotal();
+				 
+				//mostrar na tela 
+				JOptionPane.showMessageDialog(null, "O total investidos com juros é:  "+ resTodos);
+				
+				
 			}
 		});
 	}
