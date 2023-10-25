@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class ClaculadoraInvestimentosGrid extends JFrame {
 
@@ -37,6 +41,19 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblDepositoMensal = new JLabel("Depósito mensal R$:");
+		contentPane.add(lblDepositoMensal);
+		
+		JLabel lblNumdeMeses = new JLabel("Num. de meses");
+		contentPane.add(lblNumdeMeses);
+		
+		JLabel lblJurosaoMes = new JLabel("Juros ao mês %:");
+		contentPane.add(lblJurosaoMes);
+		
+		JLabel lblTotalInvestidos = new JLabel("Total investido + juros R$: ");
+		contentPane.add(lblTotalInvestidos);
 	}
 
 }
