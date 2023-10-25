@@ -16,6 +16,9 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class ClaculadoraInvestimentosGrid extends JFrame {
 
@@ -47,6 +50,15 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 	public ClaculadoraInvestimentosGrid() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 454, 231);
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		JMenu mnAjuda = new JMenu("Ajuda");
+		menuBar.add(mnAjuda);
+		
+		JMenuItem mntmSobre = new JMenuItem("Sobre");
+		mnAjuda.add(mntmSobre);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -55,7 +67,7 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lblDepositoMensal = new JLabel("Depósito mensal R$:");
 		panel.add(lblDepositoMensal);
