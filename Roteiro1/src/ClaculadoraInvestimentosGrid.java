@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
 
 public class ClaculadoraInvestimentosGrid extends JFrame {
 
@@ -46,38 +47,81 @@ public class ClaculadoraInvestimentosGrid extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(5, 2, 0, 0));
+		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblDepositoMensal = new JLabel("Depósito mensal R$:");
-		contentPane.add(lblDepositoMensal);
+		panel.add(lblDepositoMensal);
+		
+		JPanel panel_7 = new JPanel();
+		contentPane.add(panel_7);
+		panel_7.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		textField = new JTextField();
-		contentPane.add(textField);
+		panel_7.add(textField);
 		textField.setColumns(10);
 		
+		JPanel panel_1 = new JPanel();
+		contentPane.add(panel_1);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
 		JLabel lblNumdeMeses = new JLabel("Num. de meses");
-		contentPane.add(lblNumdeMeses);
+		panel_1.add(lblNumdeMeses);
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.add(panel_2);
+		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		textField_1 = new JTextField();
-		contentPane.add(textField_1);
+		panel_2.add(textField_1);
 		textField_1.setColumns(10);
 		
+		JPanel panel_3 = new JPanel();
+		contentPane.add(panel_3);
+		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
 		JLabel lblJurosaoMes = new JLabel("Juros ao mês %:");
-		contentPane.add(lblJurosaoMes);
+		panel_3.add(lblJurosaoMes);
+		
+		JPanel panel_4 = new JPanel();
+		contentPane.add(panel_4);
+		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		textField_2 = new JTextField();
-		contentPane.add(textField_2);
+		panel_4.add(textField_2);
 		textField_2.setColumns(10);
 		
+		JPanel panel_9 = new JPanel();
+		contentPane.add(panel_9);
+		panel_9.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
 		JLabel lblTotalInvestidos = new JLabel("Total investido + juros R$: ");
-		contentPane.add(lblTotalInvestidos);
+		panel_9.add(lblTotalInvestidos);
+		
+		JPanel panel_5 = new JPanel();
+		contentPane.add(panel_5);
+		panel_5.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JPanel panel_8 = new JPanel();
+		contentPane.add(panel_8);
+		panel_8.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JPanel panel_6 = new JPanel();
+		panel_8.add(panel_6);
+		
+		JPanel panel_10 = new JPanel();
+		contentPane.add(panel_10);
+		panel_10.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btnCalcular = new JButton("Calcular");
+		panel_10.add(btnCalcular);
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		contentPane.add(btnCalcular);
 	}
 
 }
