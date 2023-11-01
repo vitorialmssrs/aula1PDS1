@@ -218,6 +218,8 @@ public class exercicio1 extends JFrame {
 		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textBase.setText(" ");
+				textAltura.setText(" ");
 			}
 		});
 		
@@ -306,6 +308,11 @@ public class exercicio1 extends JFrame {
 		contentPane.add(btnLimpar, gbc_btnLimpar);
 		
 		JButton btnFechar = new JButton("Fechar");
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
 		btnFechar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		GridBagConstraints gbc_btnFechar = new GridBagConstraints();
 		gbc_btnFechar.fill = GridBagConstraints.BOTH;
