@@ -219,14 +219,14 @@ public class exercicio2 extends JFrame {
 					
 					//Chama e depois converte 
 					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
-					int  PrimeiroNumero = Integer.valueOf(valorPrimeiroNumero);
-					int  SegundoNumero = Integer.valueOf(valorSegundoNumero);
+					float  PrimeiroNumero = Float.valueOf(valorPrimeiroNumero);
+					float  SegundoNumero = Float.valueOf(valorSegundoNumero);
 					
 					//Chamar o metodo- classe criada
 					Calculadora  Divisao2 = new Calculadora();
 					
 					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
-					int resultadoDivi = Divisao2.divisao (PrimeiroNumero, SegundoNumero);
+					float resultadoDivi = Divisao2.divisao (PrimeiroNumero, SegundoNumero);
 					
 					lblResultadoDasContas.setText(" "+ resultadoDivi);
 				}
@@ -237,9 +237,9 @@ public class exercicio2 extends JFrame {
 		});
 		btnCalcular.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_btnCalcular = new GridBagConstraints();
-		gbc_btnCalcular.insets = new Insets(0, 0, 5, 5);
+		gbc_btnCalcular.insets = new Insets(0, 0, 0, 5);
 		gbc_btnCalcular.gridx = 0;
-		gbc_btnCalcular.gridy = 7;
+		gbc_btnCalcular.gridy = 8;
 		contentPane.add(btnCalcular, gbc_btnCalcular);
 		
 	

@@ -29,9 +29,9 @@ public class Calculadora {
 		
 	}
 	
-	public int divisao ( int n7, int n8) {
+	public float divisao ( float n7, float n8) {
 		
-		int resultadoDivisao = n7 / n8;
+		float resultadoDivisao = n7 / n8;
 		return resultadoDivisao;
 		
 	}
