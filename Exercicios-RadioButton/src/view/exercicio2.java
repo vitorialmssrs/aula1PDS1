@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import java.awt.Insets;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
+import javax.swing.ButtonGroup;
 
 public class exercicio2 extends JFrame {
 
@@ -20,6 +21,7 @@ public class exercicio2 extends JFrame {
 	private JPanel contentPane;
 	private JTextField textPrimeiroNumeroInteiro;
 	private JTextField textSeundoNumeroInteiro;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -94,6 +96,7 @@ public class exercicio2 extends JFrame {
 		textSeundoNumeroInteiro.setColumns(10);
 		
 		JRadioButton rdbtnAdicao = new JRadioButton("+ Adição");
+		buttonGroup.add(rdbtnAdicao);
 		rdbtnAdicao.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_rdbtnAdicao = new GridBagConstraints();
 		gbc_rdbtnAdicao.anchor = GridBagConstraints.WEST;
@@ -103,6 +106,7 @@ public class exercicio2 extends JFrame {
 		contentPane.add(rdbtnAdicao, gbc_rdbtnAdicao);
 		
 		JRadioButton rdbtnSubtracao = new JRadioButton("- Subtração");
+		buttonGroup.add(rdbtnSubtracao);
 		rdbtnSubtracao.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_rdbtnSubtracao = new GridBagConstraints();
 		gbc_rdbtnSubtracao.anchor = GridBagConstraints.WEST;
@@ -112,6 +116,7 @@ public class exercicio2 extends JFrame {
 		contentPane.add(rdbtnSubtracao, gbc_rdbtnSubtracao);
 		
 		JRadioButton rdbtnMultiplicacao = new JRadioButton("X Multiplicação");
+		buttonGroup.add(rdbtnMultiplicacao);
 		rdbtnMultiplicacao.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_rdbtnMultiplicacao = new GridBagConstraints();
 		gbc_rdbtnMultiplicacao.anchor = GridBagConstraints.WEST;
@@ -121,6 +126,7 @@ public class exercicio2 extends JFrame {
 		contentPane.add(rdbtnMultiplicacao, gbc_rdbtnMultiplicacao);
 		
 		JRadioButton rdbtnDivisao = new JRadioButton("/ Divisão");
+		buttonGroup.add(rdbtnDivisao);
 		rdbtnDivisao.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_rdbtnDivisao = new GridBagConstraints();
 		gbc_rdbtnDivisao.anchor = GridBagConstraints.WEST;

@@ -227,40 +227,40 @@ public class exercicio1 extends JFrame {
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//if ( rdbtnPerimetro = != null  ) {
+				if ( rdbtnPerimetro = != null  ) {
 				
 				//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
-				//String valorBase = textBase.getText();
-				//String valorAltura = textAltura.getText();
+				String valorBase = textBase.getText();
+				String valorAltura = textAltura.getText();
 				
 				//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
-				//float baseConvertida = Float.valueOf(valorBase);
-				//float alturaConvertida = Float.valueOf(valorAltura);
+				float baseConvertida = Float.valueOf(valorBase);
+				float alturaConvertida = Float.valueOf(valorAltura);
 				
 				//chamar o metodo criado 
-				//Retangulo contas = new Retangulo ();
+				Retangulo contas = new Retangulo ();
 				
 				//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
-				//float resultadoPerimetro = contas.perimetroTotal (baseConvertida, alturaConvertida);
+				float resultadoPerimetro = contas.perimetroTotal (baseConvertida, alturaConvertida);
 				
-				//lblResultadoArea.setText( ""+ resultadoPerimetro);
-				//} else { //Como vou identificar que é o outro botão? 
+				lblResultadoArea.setText( ""+ resultadoPerimetro);
+				} else { //Como vou identificar que é o outro botão? 
 					
 					//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
 					
-				//String valorBase = textBase.getText() ;//
-					//String valorAltura = textAltura.getText();
+					    String valorBase = textBase.getText() ;
+						String valorAltura = textAltura.getText();
 					
 					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
-					//float baseConvertida = Float.valueOf(valorBase);
-					//float alturaConvertida = Float.valueOf(valorAltura);
+					float baseConvertida = Float.valueOf(valorBase);
+					float alturaConvertida = Float.valueOf(valorAltura);
 					
-					//Retangulo contasA = new Retangulo ();
+					Retangulo contasA = new Retangulo ();
 					
 					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
-					//float resultadoArea = contasA.areaTotal(baseConvertida, alturaConvertida);
+					float resultadoArea = contasA.areaTotal(baseConvertida, alturaConvertida);
 					//comando que diz o resultado da area 
-					//lblResultadoArea.setText( ""+ resultadoArea);
+					lblResultadoArea.setText( ""+ resultadoArea);
 
 				}
 				
