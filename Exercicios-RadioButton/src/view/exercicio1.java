@@ -218,6 +218,7 @@ public class exercicio1 extends JFrame {
 		btnLimpar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//comando para limpar 
 				textBase.setText(" ");
 				textAltura.setText(" ");
 			}
@@ -310,6 +311,7 @@ public class exercicio1 extends JFrame {
 		JButton btnFechar = new JButton("Fechar");
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//comando para o botão fechar funcionar 
 				setVisible(false);
 			}
 		});
