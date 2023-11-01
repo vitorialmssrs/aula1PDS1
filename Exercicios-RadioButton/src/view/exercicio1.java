@@ -6,8 +6,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Model.Retangulo;
-import model.ConversaoTemperatura;
-import model.RetanguloEx3;
 
 import java.awt.GridLayout;
 import javax.swing.JLabel;
@@ -227,7 +225,7 @@ public class exercicio1 extends JFrame {
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if ( rdbtnPerimetro = != null  ) {
+				if ( rdbtnPerimetro.isSelected()) {
 				
 				//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
 				String valorBase = textBase.getText();
@@ -244,11 +242,15 @@ public class exercicio1 extends JFrame {
 				float resultadoPerimetro = contas.perimetroTotal (baseConvertida, alturaConvertida);
 				
 				lblResultadoArea.setText( ""+ resultadoPerimetro);
-				} else { //Como vou identificar que é o outro botão? 
-					
+				} else if(rdbtnArea.isSelected()){ 
+				// esse comando acima vai impedir que ele calcule sem ter selecionado algum dos radiobuttons, então 
+				  //se ele for selecionado ele irá fazer tal coisa
+				 //Como vou identificar que é o outro botão? Atraves desse comando 
+					 
+				
 					//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
 					
-					    String valorBase = textBase.getText() ;
+					     String valorBase = textBase.getText() ;
 						String valorAltura = textAltura.getText();
 					
 					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
@@ -287,7 +289,7 @@ public class exercicio1 extends JFrame {
 				//para mostrar as informações agora 
 				//JOptionPane.showMessageDialog(null, "O valor do Perimetro  e da área são: "+resultadoPerimetro + " "+ resultadoArea);
 				
-			//}
+			}
 		});
 		btnCalcular.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		GridBagConstraints gbc_btnCalcular = new GridBagConstraints();
