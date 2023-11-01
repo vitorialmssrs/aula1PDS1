@@ -269,29 +269,6 @@ public class exercicio1 extends JFrame {
 
 				}
 				
-				
-				//chamar a classe que foi criada para ele realizar o calculo e mostrar na tela
-				
-				//String valorBase = textBase.getText() ;
-				//String valorAltura = textAltura.getText();
-				//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
-				//float baseConvertida = Float.valueOf(valorBase);
-				//float alturaConvertida = Float.valueOf(valorAltura);
-				//chamar o metodo criado 
-				//Retangulo contas = new Retangulo ();
-				
-				//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
-				//float resultadoArea = contas.areaTotal(baseConvertida, alturaConvertida);
-				//float resultadoPerimetro = contas.perimetroTotal (baseConvertida, alturaConvertida);
-				
-				//float resultArea = 
-				//comando que diz o resultado da area 
-				//lblResultadoArea.setText( ""+ resultadoArea);
-				//precisa ter um if? por causa dos botões? 		
-
-				//para mostrar as informações agora 
-				//JOptionPane.showMessageDialog(null, "O valor do Perimetro  e da área são: "+resultadoPerimetro + " "+ resultadoArea);
-				
 			}
 		});
 		btnCalcular.setFont(new Font("Tahoma", Font.PLAIN, 12));

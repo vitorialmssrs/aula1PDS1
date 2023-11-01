@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Model.Calculadora;
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
@@ -14,6 +17,8 @@ import java.awt.Insets;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class exercicio2 extends JFrame {
 
@@ -135,7 +140,101 @@ public class exercicio2 extends JFrame {
 		gbc_rdbtnDivisao.gridy = 5;
 		contentPane.add(rdbtnDivisao, gbc_rdbtnDivisao);
 		
+		JLabel lblResultadoDasContas = new JLabel("");
+		GridBagConstraints gbc_lblResultadoDasContas = new GridBagConstraints();
+		gbc_lblResultadoDasContas.insets = new Insets(0, 0, 5, 0);
+		gbc_lblResultadoDasContas.gridx = 1;
+		gbc_lblResultadoDasContas.gridy = 7;
+		contentPane.add(lblResultadoDasContas, gbc_lblResultadoDasContas);
+		
 		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				//Agora sera criado um if igual no exercicio dois mais para cada botão selecionado 
+				//ENTÃO CADA VEZ QUE FOR CLICADO UM BOTAO FARA TAL COISA, MAS N IRA RODAR SE N FOR CLICADO EM NADA 
+				
+				if(rdbtnAdicao.isSelected()) {
+					//CHAMAR A CLASSE QUE FOI CRIADA PARA REALIZAR O CALCULO 
+					String valorPrimeiroNumero = textPrimeiroNumeroInteiro.getText();
+					String valorSegundoNumero = textSeundoNumeroInteiro.getText();
+					
+					//Chama e depois converte 
+					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
+					int  PrimeiroNumero = Integer.valueOf(valorPrimeiroNumero);
+					int  SegundoNumero = Integer.valueOf(valorSegundoNumero);
+					
+					//Chamar o metodo- classe criada
+					Calculadora  adicao2 = new Calculadora();
+					
+					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
+					int resultadoAdicao = adicao2.adicao (PrimeiroNumero, SegundoNumero);
+					
+					lblResultadoDasContas.setText(" "+ resultadoAdicao);
+				
+					
+				} else if (rdbtnSubtracao.isSelected()) {
+					//CHAMAR A CLASSE QUE FOI CRIADA PARA REALIZAR O CALCULO 
+					String valorPrimeiroNumero = textPrimeiroNumeroInteiro.getText();
+					String valorSegundoNumero = textSeundoNumeroInteiro.getText();
+					
+					//Chama e depois converte 
+					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
+					int  PrimeiroNumero = Integer.valueOf(valorPrimeiroNumero);
+					int  SegundoNumero = Integer.valueOf(valorSegundoNumero);
+					
+					//Chamar o metodo- classe criada
+					Calculadora  subratracao2 = new Calculadora();
+					
+					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
+					int resultadoSubtracao = subratracao2.subtracao (PrimeiroNumero, SegundoNumero);
+					
+					lblResultadoDasContas.setText(" "+ resultadoSubtracao);
+					
+					
+				} else if (rdbtnMultiplicacao.isSelected()) {
+					//CHAMAR A CLASSE QUE FOI CRIADA PARA REALIZAR O CALCULO 
+					String valorPrimeiroNumero = textPrimeiroNumeroInteiro.getText();
+					String valorSegundoNumero = textSeundoNumeroInteiro.getText();
+					
+					//Chama e depois converte 
+					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
+					int  PrimeiroNumero = Integer.valueOf(valorPrimeiroNumero);
+					int  SegundoNumero = Integer.valueOf(valorSegundoNumero);
+					
+					//Chamar o metodo- classe criada
+					Calculadora  multiplicacao2 = new Calculadora();
+					
+					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
+					int resultadoMulti = multiplicacao2.multiplicacao (PrimeiroNumero, SegundoNumero);
+					
+					lblResultadoDasContas.setText(" "+ resultadoMulti);
+					
+					
+				} else if (rdbtnDivisao.isSelected()) {
+					
+					//CHAMAR A CLASSE QUE FOI CRIADA PARA REALIZAR O CALCULO 
+					String valorPrimeiroNumero = textPrimeiroNumeroInteiro.getText();
+					String valorSegundoNumero = textSeundoNumeroInteiro.getText();
+					
+					//Chama e depois converte 
+					//primeiro chama o numero e depois converte usando essa formula pode usar para todos 
+					int  PrimeiroNumero = Integer.valueOf(valorPrimeiroNumero);
+					int  SegundoNumero = Integer.valueOf(valorSegundoNumero);
+					
+					//Chamar o metodo- classe criada
+					Calculadora  Divisao2 = new Calculadora();
+					
+					//chama os metodos criados usando uma nova variavel que foi criada em cima para armazenar
+					int resultadoDivi = Divisao2.divisao (PrimeiroNumero, SegundoNumero);
+					
+					lblResultadoDasContas.setText(" "+ resultadoDivi);
+				}
+				
+				
+				
+			}
+		});
 		btnCalcular.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GridBagConstraints gbc_btnCalcular = new GridBagConstraints();
 		gbc_btnCalcular.insets = new Insets(0, 0, 5, 5);
@@ -143,12 +242,7 @@ public class exercicio2 extends JFrame {
 		gbc_btnCalcular.gridy = 7;
 		contentPane.add(btnCalcular, gbc_btnCalcular);
 		
-		JLabel lblResultadoDasContas = new JLabel("");
-		GridBagConstraints gbc_lblResultadoDasContas = new GridBagConstraints();
-		gbc_lblResultadoDasContas.insets = new Insets(0, 0, 5, 0);
-		gbc_lblResultadoDasContas.gridx = 1;
-		gbc_lblResultadoDasContas.gridy = 7;
-		contentPane.add(lblResultadoDasContas, gbc_lblResultadoDasContas);
+	
 	}
 
 }
