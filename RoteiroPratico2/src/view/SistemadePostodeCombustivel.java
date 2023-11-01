@@ -25,6 +25,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class SistemadePostodeCombustivel extends JFrame {
 
@@ -39,6 +40,8 @@ public class SistemadePostodeCombustivel extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_4;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -62,7 +65,7 @@ public class SistemadePostodeCombustivel extends JFrame {
 	public SistemadePostodeCombustivel() {
 		setTitle("Posto de combustivel");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 699, 654);
+		setBounds(100, 100, 699, 512);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -258,10 +261,10 @@ public class SistemadePostodeCombustivel extends JFrame {
 		
 		JLabel label_10 = new JLabel("");
 		panel_OleoMotor.add(label_10, "cell 0 4,grow");
-		contentPane.setLayout(new MigLayout("", "[127px][74px][69px][][][][][][][][][10px][][22px][83px][165px]", "[129px][129px][129px][114px][21px][]"));
+		contentPane.setLayout(new MigLayout("", "[127px][74px][69px][][][][][][][][][][10px][][22px][83px][165px]", "[129px][129px][129px][114px][21px][]"));
 		contentPane.add(panel_TabelaPreco_combustivel, "cell 0 0 6 1,grow");
-		contentPane.add(panel_TabelaPreco_OleoMotor, "cell 7 0 9 1,growx,aligny top");
-		contentPane.add(panel_OleoMotor, "cell 0 1 16 1,grow");
+		contentPane.add(panel_TabelaPreco_OleoMotor, "cell 8 0 9 1,growx,aligny top");
+		contentPane.add(panel_OleoMotor, "cell 0 1 17 1,grow");
 		contentPane.add(panel_Abastecimento, "cell 0 2 6 1,grow");
 		panel_Abastecimento.setLayout(new MigLayout("", "[96px][98px]", "[21px][19px][19px]"));
 		
@@ -286,28 +289,41 @@ public class SistemadePostodeCombustivel extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "Formas de Pagamento", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		contentPane.add(panel_1, "cell 7 2 9 1,grow");
-		panel_1.setLayout(null);
+		contentPane.add(panel_1, "cell 8 2 9 1,grow");
+		panel_1.setLayout(new MigLayout("", "[103px][][][][][][grow]", "[21px][21px][][]"));
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("New radio button");
-		rdbtnNewRadioButton_1.setBounds(6, 24, 103, 21);
-		panel_1.add(rdbtnNewRadioButton_1);
+		JRadioButton rdbtnAVista = new JRadioButton(" À vista");
+		buttonGroup.add(rdbtnAVista);
+		panel_1.add(rdbtnAVista, "cell 0 0,alignx left,aligny top");
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
-		rdbtnNewRadioButton.setBounds(6, 78, 103, 21);
-		panel_1.add(rdbtnNewRadioButton);
+		JRadioButton rdbtnAPrazo = new JRadioButton("À prazo");
+		buttonGroup.add(rdbtnAPrazo);
+		panel_1.add(rdbtnAPrazo, "cell 0 1,alignx left,aligny top");
+		
+		JLabel lblDias = new JLabel("Dias:");
+		panel_1.add(lblDias, "cell 2 1");
+		
+		textField_3 = new JTextField();
+		panel_1.add(textField_3, "cell 3 1,growx");
+		textField_3.setColumns(10);
+		
+		JLabel lblTotalAPagar = new JLabel("Total a pagar:");
+		panel_1.add(lblTotalAPagar, "cell 0 3");
+		
+		JLabel lblTotalaPagar = new JLabel("-");
+		panel_1.add(lblTotalaPagar, "cell 3 3,alignx center");
 		
 		JButton btnCalcular = new JButton("Calcular ");
-		contentPane.add(btnCalcular, "cell 2 5,alignx right,aligny top");
+		contentPane.add(btnCalcular, "cell 0 3,alignx right,aligny bottom");
 		
 		JButton btnNovoCalculo = new JButton("Novo Calculo");
 		btnNovoCalculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		contentPane.add(btnNovoCalculo, "cell 5 5,growx,aligny top");
+		contentPane.add(btnNovoCalculo, "cell 6 3,growx,aligny bottom");
 		
 		JButton btnFechar = new JButton("Fechar");
-		contentPane.add(btnFechar, "cell 7 5,alignx left,aligny top");
+		contentPane.add(btnFechar, "cell 16 3,alignx left,aligny bottom");
 	}
 }
