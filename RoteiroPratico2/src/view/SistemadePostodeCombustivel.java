@@ -7,21 +7,16 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
-import java.awt.GridLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JTextField;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JRadioButton;
@@ -35,11 +30,11 @@ public class SistemadePostodeCombustivel extends JFrame {
 	private JTextField textGasolinaComum;
 	private JTextField textGasolinaAditivada;
 	private JTextField textEtanol;
-	private JTextField textField;
-	private JTextField textFrasco1Litro;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
+	private JTextField textFrasco500table;
+	private JTextField textFrasco1Litrotable;
+	private JTextField textFrasco500;
+	private JTextField textFrasco1l;
+	private JTextField textQuantLitrosAbastecimento;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textField_3;
 
@@ -164,14 +159,14 @@ public class SistemadePostodeCombustivel extends JFrame {
 		gbc_lblFrasco500mL.gridy = 1;
 		panel_TabelaPreco_OleoMotor.add(lblFrasco500mL, gbc_lblFrasco500mL);
 		
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.insets = new Insets(0, 0, 5, 0);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 2;
-		gbc_textField.gridy = 1;
-		panel_TabelaPreco_OleoMotor.add(textField, gbc_textField);
-		textField.setColumns(10);
+		textFrasco500table = new JTextField();
+		GridBagConstraints gbc_textFrasco500table = new GridBagConstraints();
+		gbc_textFrasco500table.insets = new Insets(0, 0, 5, 0);
+		gbc_textFrasco500table.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFrasco500table.gridx = 2;
+		gbc_textFrasco500table.gridy = 1;
+		panel_TabelaPreco_OleoMotor.add(textFrasco500table, gbc_textFrasco500table);
+		textFrasco500table.setColumns(10);
 		
 		JLabel lblFrasco1Litro = new JLabel("Frasco 1 Litro:");
 		GridBagConstraints gbc_lblFrasco1Litro = new GridBagConstraints();
@@ -180,14 +175,14 @@ public class SistemadePostodeCombustivel extends JFrame {
 		gbc_lblFrasco1Litro.gridy = 2;
 		panel_TabelaPreco_OleoMotor.add(lblFrasco1Litro, gbc_lblFrasco1Litro);
 		
-		textFrasco1Litro = new JTextField();
-		GridBagConstraints gbc_textFrasco1Litro = new GridBagConstraints();
-		gbc_textFrasco1Litro.insets = new Insets(0, 0, 5, 0);
-		gbc_textFrasco1Litro.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textFrasco1Litro.gridx = 2;
-		gbc_textFrasco1Litro.gridy = 2;
-		panel_TabelaPreco_OleoMotor.add(textFrasco1Litro, gbc_textFrasco1Litro);
-		textFrasco1Litro.setColumns(10);
+		textFrasco1Litrotable = new JTextField();
+		GridBagConstraints gbc_textFrasco1Litrotable = new GridBagConstraints();
+		gbc_textFrasco1Litrotable.insets = new Insets(0, 0, 5, 0);
+		gbc_textFrasco1Litrotable.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textFrasco1Litrotable.gridx = 2;
+		gbc_textFrasco1Litrotable.gridy = 2;
+		panel_TabelaPreco_OleoMotor.add(textFrasco1Litrotable, gbc_textFrasco1Litrotable);
+		textFrasco1Litrotable.setColumns(10);
 		
 		JPanel panel_OleoMotor = new JPanel();
 		panel_OleoMotor.setBorder(new TitledBorder(null, "\u00D3leo Motor", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -227,9 +222,9 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JLabel lblFrascode500mL = new JLabel("Frasco de 500mL");
 		panel_OleoMotor.add(lblFrascode500mL, "cell 1 2,grow");
 		
-		textField_1 = new JTextField();
-		panel_OleoMotor.add(textField_1, "cell 2 2,alignx left,growy");
-		textField_1.setColumns(10);
+		textFrasco500 = new JTextField();
+		panel_OleoMotor.add(textFrasco500, "cell 2 2,alignx left,growy");
+		textFrasco500.setColumns(10);
 		
 		JLabel lblValoraPagar1Litro = new JLabel("-");
 		panel_OleoMotor.add(lblValoraPagar1Litro, "cell 3 2,alignx center,growy");
@@ -246,9 +241,9 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JLabel label_6 = new JLabel("");
 		panel_OleoMotor.add(label_6, "cell 1 3,grow");
 		
-		textField_2 = new JTextField();
-		panel_OleoMotor.add(textField_2, "flowx,cell 2 3,grow");
-		textField_2.setColumns(10);
+		textFrasco1l = new JTextField();
+		panel_OleoMotor.add(textFrasco1l, "flowx,cell 2 3,grow");
+		textFrasco1l.setColumns(10);
 		
 		JLabel label_7 = new JLabel("");
 		panel_OleoMotor.add(label_7, "cell 2 3,grow");
@@ -277,9 +272,9 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JLabel lblQuantidadeLitros = new JLabel("Quantidade de litros");
 		panel_Abastecimento.add(lblQuantidadeLitros, "cell 0 1,alignx right,aligny center");
 		
-		textField_4 = new JTextField();
-		panel_Abastecimento.add(textField_4, "cell 1 1,alignx left,aligny top");
-		textField_4.setColumns(10);
+		textQuantLitrosAbastecimento = new JTextField();
+		panel_Abastecimento.add(textQuantLitrosAbastecimento, "cell 1 1,alignx left,aligny top");
+		textQuantLitrosAbastecimento.setColumns(10);
 		
 		JLabel lblTotalCombustivelAbtm = new JLabel("Total de Combustivel");
 		panel_Abastecimento.add(lblTotalCombustivelAbtm, "cell 0 2,alignx left,aligny center");
@@ -314,6 +309,23 @@ public class SistemadePostodeCombustivel extends JFrame {
 		panel_1.add(lblTotalaPagar, "cell 3 3,alignx center");
 		
 		JButton btnCalcular = new JButton("Calcular ");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//calculo para gerar os valores
+				//comando principal será nos botões
+				//precisa usar  o if else if para os comandos//
+				
+				//primeiro será feito da tabela combustivel
+				
+				String textoDigitado = textOleoDisel.getText();
+				String textoDigitado2 = textGasolinaComum.getText();
+				String textodigitado3 = textGasolinaAditivada.getText();
+				String textodigitado4 = textEtanol.getText();
+		
+				}
+				
+			}
+		);
 		contentPane.add(btnCalcular, "cell 0 3,alignx right,aligny bottom");
 		
 		JButton btnNovoCalculo = new JButton("Novo Calculo");
