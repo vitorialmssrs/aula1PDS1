@@ -29,6 +29,9 @@ public class Janela extends JFrame {
 	private JTextField txtCPF;
 	ArrayList<Pessoa> listaPessoas = new ArrayList<Pessoa>();
 	private JButton btnNewButton_2;
+	private JTextField textPeso;
+	private JTextField textIdade;
+	private JLabel lblTelefone;
 
 	/**
 	 * Launch the application.
@@ -51,7 +54,7 @@ public class Janela extends JFrame {
 	 */
 	public Janela() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 324, 300);
+		setBounds(100, 100, 805, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -59,7 +62,8 @@ public class Janela extends JFrame {
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(11, 104, 287, 146);
+		scrollPane.setToolTipText("");
+		scrollPane.setBounds(10, 100, 617, 149);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
@@ -75,6 +79,9 @@ public class Janela extends JFrame {
 		atualizarJTableModel();
 		scrollPane.setViewportView(table);
 		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		scrollPane.setColumnHeaderView(lblNewLabel_1);
+		
 		labelNome = new JLabel("Nome");
 		labelNome.setBounds(15, 11, 46, 14);
 		contentPane.add(labelNome);
@@ -85,11 +92,11 @@ public class Janela extends JFrame {
 		txtNome.setColumns(10);
 		
 		lblNewLabel = new JLabel("CPF");
-		lblNewLabel.setBounds(185, 11, 46, 14);
+		lblNewLabel.setBounds(313, 11, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtCPF = new JTextField();
-		txtCPF.setBounds(181, 36, 118, 20);
+		txtCPF.setBounds(309, 36, 118, 20);
 		contentPane.add(txtCPF);
 		txtCPF.setColumns(10);
 		
@@ -113,7 +120,7 @@ public class Janela extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(11, 67, 89, 23);
+		btnNewButton.setBounds(140, 66, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Excluir");
@@ -125,7 +132,7 @@ public class Janela extends JFrame {
 				limparCampos();
 			}
 		});
-		btnNewButton_1.setBounds(110, 67, 89, 23);
+		btnNewButton_1.setBounds(239, 66, 89, 23);
 		contentPane.add(btnNewButton_1);
 		
 		btnNewButton_2 = new JButton("Alterar");
@@ -133,12 +140,55 @@ public class Janela extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(210, 67, 89, 23);
+		btnNewButton_2.setBounds(339, 66, 89, 23);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblPeso = new JLabel("Peso");
+		lblPeso.setBounds(172, 12, 63, 13);
+		contentPane.add(lblPeso);
+		
+		textPeso = new JTextField();
+		textPeso.setBounds(166, 36, 132, 19);
+		contentPane.add(textPeso);
+		textPeso.setColumns(10);
+		
+		JLabel lblIdade = new JLabel("Idade");
+		lblIdade.setBounds(441, 12, 45, 13);
+		contentPane.add(lblIdade);
+		
+		textIdade = new JTextField();
+		textIdade.setBounds(437, 36, 96, 19);
+		contentPane.add(textIdade);
+		textIdade.setColumns(10);
+		
+		lblTelefone = new JLabel("Telefone");
+		lblTelefone.setBounds(551, 12, 45, 13);
+		contentPane.add(lblTelefone);
 	}
 	
 	public void atualizarJTableModel() {
-		table.setModel(new PessoaJTableModel(listaPessoas));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Nome", "CPF", "Idade", "Peso", "Telefone"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, true, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
 
 	}
 	
