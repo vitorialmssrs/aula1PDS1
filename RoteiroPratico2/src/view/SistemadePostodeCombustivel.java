@@ -314,6 +314,7 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JButton btnCalcular = new JButton("Calcular ");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				//calculo para gerar os valores
 				//comando principal será nos botões
 				//precisa usar  o if else if para os comandos//
@@ -331,6 +332,8 @@ public class SistemadePostodeCombustivel extends JFrame {
 				float textodigitado2 = Float.parseFloat(textoDigitado2);
 				float textodigitado3 = Float.parseFloat(textoDigitado3);
 				float textodigitado4 = Float.parseFloat(textoDigitado4);
+				
+				//calcCombustivel 
 				
 				} else if (panel_TabelaPreco_OleoMotor.setVisible(true)) {
 					
