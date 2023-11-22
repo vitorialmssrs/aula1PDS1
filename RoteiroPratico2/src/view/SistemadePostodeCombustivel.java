@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import model.calcCombustivel;
+
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -36,7 +39,7 @@ public class SistemadePostodeCombustivel extends JFrame {
 	private JTextField textFrasco1l;
 	private JTextField textQuantLitrosAbastecimento;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private JTextField textField_3;
+	private JTextField textDias;
 
 	/**
 	 * Launch the application.
@@ -298,9 +301,9 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JLabel lblDias = new JLabel("Dias:");
 		panel_1.add(lblDias, "cell 2 1");
 		
-		textField_3 = new JTextField();
-		panel_1.add(textField_3, "cell 3 1,growx");
-		textField_3.setColumns(10);
+		textDias = new JTextField();
+		panel_1.add(textDias, "cell 3 1,growx");
+		textDias.setColumns(10);
 		
 		JLabel lblTotalAPagar = new JLabel("Total a pagar:");
 		panel_1.add(lblTotalAPagar, "cell 0 3");
@@ -319,23 +322,66 @@ public class SistemadePostodeCombustivel extends JFrame {
 				
 				String textoDigitado = textOleoDisel.getText();
 				String textoDigitado2 = textGasolinaComum.getText();
-				String textodigitado3 = textGasolinaAditivada.getText();
-				String textodigitado4 = textEtanol.getText();
+				String textoDigitado3 = textGasolinaAditivada.getText();
+				String textoDigitado4 = textEtanol.getText();
+				String textoDigitado5 = textFrasco1Litrotable.getText();
+				String textoDigitado6 = textFrasco1l.getText();
+				String textoDigitado7 = textFrasco500.getText();
+				String textoDigitado8 = textFrasco500table.getText();
+				String textoDigitado9 = textDias.getText();
+				
+				
+				
+				float textodigitado = Float.parseFloat(textoDigitado);
+				float textodigitado2 = Float.parseFloat(textoDigitado2);
+				float textodigitado3 = Float.parseFloat(textoDigitado3);
+				float textodigitado4 = Float.parseFloat(textoDigitado4);
+				float textodigitado5 = Float.parseFloat(textoDigitado5);
+				float textodigitado6 = Float.parseFloat(textoDigitado6);
+				float textodigitado7 = Float.parseFloat(textoDigitado7);
+				float textodigitado8 = Float.parseFloat(textoDigitado8);
+				float textodigitado9 = Float.parseFloat(textoDigitado9);
+				
+			//	if(textoDigitado.setVisible(true)){
+					
+				//	calcCombustivel  calcAditivada = new calcCombustivel();
+					
+					
+				}
+				calcCombustivel  calcComum = new calcCombustivel();
+				calcCombustivel  calcAditivada = new calcCombustivel();
+				
 		
 				}
 				
-			}
+			//}
 		);
 		contentPane.add(btnCalcular, "cell 0 3,alignx right,aligny bottom");
 		
 		JButton btnNovoCalculo = new JButton("Novo Calculo");
 		btnNovoCalculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				textOleoDisel.setText(" ");
+				textDias.setText(" ");
+				textEtanol.setText(" ");
+				textFrasco1l.setText(" ");
+				textFrasco1Litrotable.setText(" ");
+				textFrasco500.setText(" ");
+				textFrasco500table.setText(" ");
+				textGasolinaAditivada.setText(" ");
+				textGasolinaComum.setText(" ");
+				textQuantLitrosAbastecimento.setText(" ");
+				
 			}
 		});
 		contentPane.add(btnNovoCalculo, "cell 6 3,growx,aligny bottom");
 		
 		JButton btnFechar = new JButton("Fechar");
+		btnFechar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
 		contentPane.add(btnFechar, "cell 16 3,alignx left,aligny bottom");
 	}
 }
