@@ -285,31 +285,31 @@ public class SistemadePostodeCombustivel extends JFrame {
 		JLabel lblTotalCombustivel = new JLabel("-");
 		panel_Abastecimento.add(lblTotalCombustivel, "cell 1 2,alignx center");
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new TitledBorder(null, "Formas de Pagamento", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		contentPane.add(panel_1, "cell 8 2 9 1,grow");
-		panel_1.setLayout(new MigLayout("", "[103px][][][][][][grow]", "[21px][21px][][]"));
+		JPanel panel_Forma_Pagamento = new JPanel();
+		panel_Forma_Pagamento.setBorder(new TitledBorder(null, "Formas de Pagamento", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel_Forma_Pagamento, "cell 8 2 9 1,grow");
+		panel_Forma_Pagamento.setLayout(new MigLayout("", "[103px][][][][][][grow]", "[21px][21px][][]"));
 		
 		JRadioButton rdbtnAVista = new JRadioButton(" À vista");
 		buttonGroup.add(rdbtnAVista);
-		panel_1.add(rdbtnAVista, "cell 0 0,alignx left,aligny top");
+		panel_Forma_Pagamento.add(rdbtnAVista, "cell 0 0,alignx left,aligny top");
 		
 		JRadioButton rdbtnAPrazo = new JRadioButton("À prazo");
 		buttonGroup.add(rdbtnAPrazo);
-		panel_1.add(rdbtnAPrazo, "cell 0 1,alignx left,aligny top");
+		panel_Forma_Pagamento.add(rdbtnAPrazo, "cell 0 1,alignx left,aligny top");
 		
 		JLabel lblDias = new JLabel("Dias:");
-		panel_1.add(lblDias, "cell 2 1");
+		panel_Forma_Pagamento.add(lblDias, "cell 2 1");
 		
 		textDias = new JTextField();
-		panel_1.add(textDias, "cell 3 1,growx");
+		panel_Forma_Pagamento.add(textDias, "cell 3 1,growx");
 		textDias.setColumns(10);
 		
 		JLabel lblTotalAPagar = new JLabel("Total a pagar:");
-		panel_1.add(lblTotalAPagar, "cell 0 3");
+		panel_Forma_Pagamento.add(lblTotalAPagar, "cell 0 3");
 		
 		JLabel lblTotalaPagar = new JLabel("-");
-		panel_1.add(lblTotalaPagar, "cell 3 3,alignx center");
+		panel_Forma_Pagamento.add(lblTotalaPagar, "cell 3 3,alignx center");
 		
 		JButton btnCalcular = new JButton("Calcular ");
 		btnCalcular.addActionListener(new ActionListener() {
@@ -320,47 +320,59 @@ public class SistemadePostodeCombustivel extends JFrame {
 				
 				//primeiro será feito da tabela combustivel
 				
-				String textoDigitado = textOleoDisel.getText();
-				String textoDigitado2 = textGasolinaComum.getText();
-				String textoDigitado3 = textGasolinaAditivada.getText();
-				String textoDigitado4 = textEtanol.getText();
-				String textoDigitado5 = textFrasco1Litrotable.getText();
-				String textoDigitado6 = textFrasco1l.getText();
-				String textoDigitado7 = textFrasco500.getText();
-				String textoDigitado8 = textFrasco500table.getText();
-				String textoDigitado9 = textDias.getText();
-				
-				
-				
+				if (panel_TabelaPreco_combustivel.setVisible(true)) {
+					
+					String textoDigitado = textOleoDisel.getText();
+					String textoDigitado3 = textGasolinaAditivada.getText();
+					String textoDigitado2 = textGasolinaComum.getText();
+					String textoDigitado4 = textEtanol.getText();
+					
 				float textodigitado = Float.parseFloat(textoDigitado);
 				float textodigitado2 = Float.parseFloat(textoDigitado2);
 				float textodigitado3 = Float.parseFloat(textoDigitado3);
 				float textodigitado4 = Float.parseFloat(textoDigitado4);
-				float textodigitado5 = Float.parseFloat(textoDigitado5);
-				float textodigitado6 = Float.parseFloat(textoDigitado6);
-				float textodigitado7 = Float.parseFloat(textoDigitado7);
-				float textodigitado8 = Float.parseFloat(textoDigitado8);
-				float textodigitado9 = Float.parseFloat(textoDigitado9);
 				
-			//	if(textoDigitado.setVisible(true)){
+				} else if (panel_TabelaPreco_OleoMotor.setVisible(true)) {
 					
-				//	calcCombustivel  calcAditivada = new calcCombustivel();
+					String textoDigitado5 = textFrasco1Litrotable.getText();
+					String textoDigitado8 = textFrasco500table.getText();
 					
+					float textodigitado5 = Float.parseFloat(textoDigitado5);
+					float textodigitado8 = Float.parseFloat(textoDigitado8);
+				
+					
+				} else if (panel_OleoMotor) {
+				
+					String textoDigitado6 = textFrasco1l.getText();
+					String textoDigitado7 = textFrasco500.getText();
+					
+					float textodigitado6 = Float.parseFloat(textoDigitado6);
+					float textodigitado7 = Float.parseFloat(textoDigitado7);
+					
+				}	else if(panel_Forma_Pagamento) {
+					
+					//Precisa pegar a informação de qual radioButton foi selecionado, se for selecionado a vista faz um calculo 
+					//se for selecionado a prazo faz outro calculo. 
+				
+					String textoDigitado9 = textDias.getText();
+					float textodigitado9 = Float.parseFloat(textoDigitado9);
+					
+					calcCombustivel  calcComum = new calcCombustivel();
+					calcCombustivel  calcAditivada = new calcCombustivel();
+				
 					
 				}
-				calcCombustivel  calcComum = new calcCombustivel();
-				calcCombustivel  calcAditivada = new calcCombustivel();
 				
-		
 				}
-				
-			//}
+			}
 		);
 		contentPane.add(btnCalcular, "cell 0 3,alignx right,aligny bottom");
 		
 		JButton btnNovoCalculo = new JButton("Novo Calculo");
 		btnNovoCalculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//o comando a seguir pega o texto e limpa usar em novo calculo ou em limpar informações
+				
 				textOleoDisel.setText(" ");
 				textDias.setText(" ");
 				textEtanol.setText(" ");
