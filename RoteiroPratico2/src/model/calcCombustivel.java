@@ -2,11 +2,19 @@ package model;
 
 public class calcCombustivel {
 	
-	public float calcCombustivel1 (float quantCombustivel, float valorCombustivel) {
+	public float calcGasolinaAdit (float quantCombustivel, float valorCombustivel) {
 		
-		float resultcalculo = quantCombustivel * valorCombustivel;
+		float resultcalculoA = quantCombustivel * valorCombustivel;
 		
-		return resultcalculo;
+		return resultcalculoA;
+	}
+	
+	public float calcGasComum (float quantComum, float valorComum) {
+		
+		float resultcalculoC = quantComum * valorComum;
+		
+		return resultcalculoC;
+		
 	}
 
 }
