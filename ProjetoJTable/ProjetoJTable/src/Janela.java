@@ -138,6 +138,20 @@ public class Janela extends JFrame {
 		btnNewButton_2 = new JButton("Alterar");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				//pegar a linha selecionada 
+				int linha = table.getSelectedRow();
+				Pessoa pessoaSelecionada = Pessoa.get(linha);
+				
+				//precisa abrir a janela cria um objeto e chama um metodo ste visible true 
+				
+				AlterarPessoa JanelaPessoa = new AlterarPessoa(pessoaSelecionada);
+				
+				//chama metodos para passar as informações para o objeto 
+				//ou usa o metodo construtor chamado uma vez só quando cria o objeto 
+				
+					
 			}
 		});
 		btnNewButton_2.setBounds(339, 66, 89, 23);
