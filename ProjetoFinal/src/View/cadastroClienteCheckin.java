@@ -6,8 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import net.miginfocom.swing.MigLayout;
@@ -19,6 +22,7 @@ import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
+import javax.swing.border.AbstractBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.GroupLayout;
@@ -35,7 +39,6 @@ public class cadastroClienteCheckin extends JFrame {
 	private JTextField textDataNascimento;
 	private JTextField textDataEntrada;
 	private JTextField textNumeroQuarto;
-	private JTextField textEmail;
 	private JTextField textNacionalidade;
 	private JTextField textCodigoReserva;
 	private JTextField textTelefone;
@@ -44,6 +47,7 @@ public class cadastroClienteCheckin extends JFrame {
 	private JTextField textField_1;
 	private JTextField textCidade;
 	private JTextField textEstado;
+	private JTextField textEmail;
 
 	/**
 	 * Launch the application.
@@ -83,7 +87,6 @@ public class cadastroClienteCheckin extends JFrame {
 				//ImageIcon imageIcon1= new ImageIcon(new ImageIcon(cadastroClienteCheckin.class.getResource("/Imagem/Châteu_Imperial-removebg-preview 2LogoInicio.png")).getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
 				
 				JLabel lblNewLabel = new JLabel("");
-				lblNewLabel.setBounds(5, 12, 110, 30);
 				//evento de clique 
 				lblNewLabel.addMouseListener(new MouseAdapter() {
 					@Override
@@ -95,21 +98,18 @@ public class cadastroClienteCheckin extends JFrame {
 				lblNewLabel.setIcon(imageIcon);
 				
 				JLabel lblNewLabel_2 = new JLabel("Seja Bem Vindo!");
-				lblNewLabel_2.setBounds(310, 53, 330, 49);
 				lblNewLabel_2.setForeground(new Color(1, 50, 1));
 				lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 40));
 				
 				JLabel lblNewLabel_3 = new JLabel("Insira a informações abaixo para check-in e cadastro:");
-				lblNewLabel_3.setBounds(310, 112, 382, 20);
 				lblNewLabel_3.setForeground(new Color(1, 50, 1));
 				lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
 				
 				JLabel lblNome = new JLabel("Nome:");
-				lblNome.setBounds(31, 247, 42, 17);
+				lblNome.setForeground(new Color(1, 50, 1));
 				lblNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
 				textNome = new JTextField();
-				textNome.setBounds(95, 250, 170, 15);
 				textNome.setBorder(new LineBorder(new Color(1, 50, 1)));
 				textNome.setSelectedTextColor(new Color(1, 50, 1));
 				textNome.setForeground(new Color(0, 0, 0));
@@ -118,158 +118,432 @@ public class cadastroClienteCheckin extends JFrame {
 				textNome.setColumns(10);
 				
 				JLabel lblCPF = new JLabel("CPF:");
-				lblCPF.setBounds(557, 247, 29, 17);
+				lblCPF.setForeground(new Color(1, 50, 1));
 				lblCPF.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
 				textCPF = new JTextField();
-				textCPF.setBounds(609, 250, 170, 15);
 				textCPF.setBorder(new LineBorder(new Color(1, 50, 1)));
 				textCPF.setColumns(10);
 				
 				JLabel lblDataNascimento = new JLabel("Data de nascimento:");
-				lblDataNascimento.setBounds(275, 247, 130, 17);
+				lblDataNascimento.setForeground(new Color(1, 50, 1));
 				lblDataNascimento.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
 				textDataNascimento = new JTextField();
-				textDataNascimento.setBounds(415, 250, 132, 15);
 				textDataNascimento.setBorder(new LineBorder(new Color(1, 50, 1)));
 				textDataNascimento.setColumns(10);
 				
 				JLabel lblDataCheckin = new JLabel("Data de check-in:");
-				lblDataCheckin.setBounds(31, 392, 162, 17);
+				lblDataCheckin.setForeground(new Color(1, 50, 1));
 				lblDataCheckin.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
 				textDataEntrada = new JTextField();
-				textDataEntrada.setBounds(143, 395, 130, 15);
 				textDataEntrada.setBorder(new LineBorder(new Color(1, 50, 1)));
 				textDataEntrada.setColumns(10);
 				
 				textNumeroQuarto = new JTextField();
-				textNumeroQuarto.setBounds(415, 395, 130, 15);
 				textNumeroQuarto.setBorder(new LineBorder(new Color(1, 50, 1)));
 				textNumeroQuarto.setColumns(10);
 				
 				JLabel lblEmail = new JLabel("Email:");
-				lblEmail.setBounds(31, 287, 45, 17);
+				lblEmail.setForeground(new Color(1, 50, 1));
 				lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
-				textEmail = new JTextField();
-				textEmail.setBounds(95, 289, 170, 20);
-				textEmail.setColumns(10);
-				
 				JLabel lblLogo = new JLabel("");
-				lblLogo.setBounds(125, 31, 140, 147);
 				lblLogo.setIcon(new ImageIcon(cadastroClienteCheckin.class.getResource("/Imagem/Châteu_Imperial-removebg-preview 3.png")));
 				lblLogo.setToolTipText("");
-				contentPane.setLayout(null);
-				contentPane.add(lblNewLabel);
-				contentPane.add(lblLogo);
-				contentPane.add(lblNewLabel_3);
-				contentPane.add(lblNewLabel_2);
-				contentPane.add(lblNome);
-				contentPane.add(lblCPF);
-				contentPane.add(textNome);
-				contentPane.add(lblDataNascimento);
-				contentPane.add(textDataNascimento);
-				contentPane.add(textEmail);
-				contentPane.add(textCPF);
-				contentPane.add(lblDataCheckin);
-				contentPane.add(textDataEntrada);
-				contentPane.add(textNumeroQuarto);
-				contentPane.add(lblEmail);
 				
 				JLabel lblNumeroQuarto = new JLabel("Número do quarto:");
+				lblNumeroQuarto.setForeground(new Color(1, 50, 1));
 				lblNumeroQuarto.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblNumeroQuarto.setBounds(283, 394, 150, 13);
-				contentPane.add(lblNumeroQuarto);
 				
 				JLabel lblGenero = new JLabel("Genêro:");
+				lblGenero.setForeground(new Color(1, 50, 1));
 				lblGenero.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblGenero.setBounds(275, 290, 68, 13);
-				contentPane.add(lblGenero);
 				
 				JComboBox comboBoxGenero = new JComboBox();
-				comboBoxGenero.setBounds(328, 288, 85, 21);
-				contentPane.add(comboBoxGenero);
 				
 				JLabel lblNacionalidade = new JLabel("Nacionalidade:");
+				lblNacionalidade.setForeground(new Color(1, 50, 1));
 				lblNacionalidade.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblNacionalidade.setBounds(423, 290, 103, 13);
-				contentPane.add(lblNacionalidade);
 				
 				textNacionalidade = new JTextField();
-				textNacionalidade.setBounds(514, 289, 115, 19);
-				contentPane.add(textNacionalidade);
 				textNacionalidade.setColumns(10);
 				
 				JLabel lblCodigodaReserva = new JLabel("Código da reserva:");
+				lblCodigodaReserva.setForeground(new Color(1, 50, 1));
 				lblCodigodaReserva.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblCodigodaReserva.setBounds(562, 391, 130, 19);
-				contentPane.add(lblCodigodaReserva);
 				
 				textCodigoReserva = new JTextField();
-				textCodigoReserva.setBounds(687, 393, 96, 19);
-				contentPane.add(textCodigoReserva);
 				textCodigoReserva.setColumns(10);
 				
 				JLabel lblTelefone = new JLabel("Telefone:");
+				lblTelefone.setForeground(new Color(1, 50, 1));
 				lblTelefone.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblTelefone.setBounds(28, 326, 68, 13);
-				contentPane.add(lblTelefone);
 				
 				textTelefone = new JTextField();
-				textTelefone.setBounds(95, 325, 110, 19);
-				contentPane.add(textTelefone);
 				textTelefone.setColumns(10);
 				
 				JLabel lblCEP = new JLabel("CEP:");
+				lblCEP.setForeground(new Color(1, 50, 1));
 				lblCEP.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblCEP.setBounds(215, 326, 45, 13);
-				contentPane.add(lblCEP);
 				
 				textCEP = new JTextField();
-				textCEP.setBounds(251, 325, 96, 19);
-				contentPane.add(textCEP);
 				textCEP.setColumns(10);
 				
 				JLabel lblRua = new JLabel("Rua:");
+				lblRua.setForeground(new Color(1, 50, 1));
 				lblRua.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblRua.setBounds(373, 328, 45, 13);
-				contentPane.add(lblRua);
 				
 				textField = new JTextField();
-				textField.setBounds(415, 325, 132, 19);
-				contentPane.add(textField);
 				textField.setColumns(10);
 				
 				JLabel lblBairro = new JLabel("Bairro:");
+				lblBairro.setForeground(new Color(1, 50, 1));
 				lblBairro.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblBairro.setBounds(557, 328, 45, 13);
-				contentPane.add(lblBairro);
 				
 				textField_1 = new JTextField();
-				textField_1.setBounds(607, 327, 172, 19);
-				contentPane.add(textField_1);
 				textField_1.setColumns(10);
 				
 				JLabel lblCidade = new JLabel("Cidade:");
+				lblCidade.setForeground(new Color(1, 50, 1));
 				lblCidade.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblCidade.setBounds(31, 364, 65, 13);
-				contentPane.add(lblCidade);
 				
 				textCidade = new JTextField();
-				textCidade.setBounds(95, 363, 96, 19);
-				contentPane.add(textCidade);
 				textCidade.setColumns(10);
 				
 				JLabel lblEstado = new JLabel("Estado:");
+				lblEstado.setForeground(new Color(1, 50, 1));
 				lblEstado.setFont(new Font("Tahoma", Font.PLAIN, 14));
-				lblEstado.setBounds(201, 366, 85, 13);
-				contentPane.add(lblEstado);
 				
 				textEstado = new JTextField();
-				textEstado.setBounds(261, 363, 96, 19);
-				contentPane.add(textEstado);
 				textEstado.setColumns(10);
+	
+				Color bordeColor = new Color(1,50,1);
+				int voltaMenor = 4;
+				RoundedBorder roundedBorder = new RoundedBorder(voltaMenor, bordeColor);
+				
+				textEstado.setBorder(roundedBorder);
+				textNome.setBorder(roundedBorder);
+				textDataNascimento.setBorder(roundedBorder);
+				textCPF.setBorder(roundedBorder);
+				textNacionalidade.setBorder(roundedBorder);
+				textTelefone.setBorder(roundedBorder);
+				textCEP.setBorder(roundedBorder);
+				textField.setBorder(roundedBorder);
+				textField_1.setBorder(roundedBorder);
+				textCidade.setBorder(roundedBorder);
+				textDataEntrada.setBorder(roundedBorder);
+				textNumeroQuarto.setBorder(roundedBorder);
+				textCodigoReserva.setBorder(roundedBorder);
+				
+				JButton btnLimpar = new JButton("");
+				btnLimpar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						textNome.setText(" ");
+						textEstado.setText(" ");
+						textDataNascimento.setText(" ");
+						textCPF.setText(" ");
+						textNacionalidade.setText(" ");
+						textTelefone.setText(" ");
+						textCEP.setText(" ");
+						textField.setText(" ");
+						textField_1.setText(" ");
+						textCidade.setText(" ");
+						textDataEntrada.setText(" ");
+						textNumeroQuarto.setText(" ");
+						textCodigoReserva.setText(" ");
+						
+											
+					}
+				});
+				btnLimpar.setIcon(new ImageIcon(cadastroClienteCheckin.class.getResource("/Imagem/Clientelimpar.png")));
+				
+				JButton btnCadastrar = new JButton("");
+				btnCadastrar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//gerar o código
+						
+						
+						
+						
+					}
+				});
+				btnCadastrar.setIcon(new ImageIcon(cadastroClienteCheckin.class.getResource("/Imagem/Group 23cadastrar.png")));
+				
+				textEmail = new JTextField();
+				textEmail.setBorder(new LineBorder(new Color(1, 50, 1)));
+				textEmail.setColumns(10);
+				
+				GroupLayout gl_contentPane = new GroupLayout(contentPane);
+				gl_contentPane.setHorizontalGroup(
+					gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(10)
+									.addComponent(lblNewLabel))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(120)
+									.addComponent(lblLogo, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+									.addGap(6)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblNewLabel_2)
+										.addComponent(lblNewLabel_3)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(26)
+									.addComponent(lblNome)
+									.addGap(22)
+									.addComponent(textNome, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addComponent(lblDataNascimento)
+									.addGap(10)
+									.addComponent(textDataNascimento, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addComponent(lblCPF)
+									.addGap(23)
+									.addComponent(textCPF, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(26)
+									.addComponent(lblEmail, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+									.addGap(19)
+									.addComponent(textEmail, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE)
+									.addGap(10)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblGenero, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(53)
+											.addComponent(comboBoxGenero, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)))
+									.addGap(10)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(93)
+											.addComponent(textNacionalidade, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblNacionalidade, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(23)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(67)
+											.addComponent(textTelefone, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblTelefone, GroupLayout.PREFERRED_SIZE, 68, GroupLayout.PREFERRED_SIZE))
+									.addGap(10)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(36)
+											.addComponent(textCEP, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblCEP, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+									.addGap(26)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(42)
+											.addComponent(textField, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblRua, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE))
+									.addGap(10)
+									.addComponent(lblBairro, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+									.addGap(5)
+									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 172, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(26)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(64)
+											.addComponent(textCidade, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblCidade, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE))
+									.addGap(10)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(60)
+											.addComponent(textEstado, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblEstado, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(26)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblDataCheckin, GroupLayout.PREFERRED_SIZE, 174, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(112)
+											.addComponent(textDataEntrada, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
+									.addGap(10)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(132)
+											.addComponent(textNumeroQuarto, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblNumeroQuarto, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
+									.addGap(17)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(125)
+											.addComponent(textCodigoReserva, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblCodigodaReserva, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(152)
+									.addComponent(btnLimpar, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)
+									.addGap(136)
+									.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
+							.addGap(53))
+				);
+				gl_contentPane.setVerticalGroup(
+					gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(7)
+							.addComponent(lblNewLabel)
+							.addGap(8)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblLogo)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(42)
+									.addComponent(lblNewLabel_2)
+									.addGap(10)
+									.addComponent(lblNewLabel_3)))
+							.addGap(50)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNome)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(textNome, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblDataNascimento)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(textDataNascimento, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblCPF)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(textCPF, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)))
+							.addGap(16)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblEmail)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addComponent(textEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(2)
+											.addComponent(lblGenero, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE))
+										.addComponent(comboBoxGenero, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(2)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(textNacionalidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(1)
+											.addComponent(lblNacionalidade, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)))))
+							.addGap(12)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(1)
+											.addComponent(textTelefone, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblTelefone, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(textCEP, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addComponent(lblCEP, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(lblRua, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(lblBairro, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(2)
+									.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)))
+							.addGap(13)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(textCidade, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addComponent(lblCidade, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textEstado, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addComponent(lblEstado, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)))
+							.addGap(6)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(1)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblDataCheckin)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(3)
+											.addComponent(textDataEntrada, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(3)
+									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup()
+											.addGap(1)
+											.addComponent(textNumeroQuarto, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+										.addComponent(lblNumeroQuarto, GroupLayout.PREFERRED_SIZE, 13, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(2)
+									.addComponent(textCodigoReserva, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblCodigodaReserva, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE))
+							.addGap(45)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnLimpar, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE))
+							.addContainerGap())
+				);
+				contentPane.setLayout(gl_contentPane);
+				
+				
 	}
-}
+	static class RoundedBorder extends AbstractBorder {
+
+		private final int radius;
+
+	    private final Color color;
+
+
+
+	    public RoundedBorder(int radius, Color color) {
+
+	        this.radius = radius;
+
+	        this.color = color;
+
+	    }
+
+
+
+	    @Override
+
+	    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+
+	        Color oldColor = g.getColor();
+
+	        g.setColor(color);
+
+	        g.drawRoundRect(x, y, width - 1, height - 1, radius, radius);
+
+	        g.setColor(oldColor);
+
+	    }
+
+
+
+	    @Override
+
+	    public Insets getBorderInsets(Component c) {
+
+	        return new Insets(this.radius + 1, this.radius + 1, this.radius + 2, this.radius);
+
+	    }
+
+
+
+	    @Override
+
+	    public boolean isBorderOpaque() {
+
+	        return true;
+
+	    }
+
+    }
+    }
+
