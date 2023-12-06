@@ -1,3 +1,4 @@
+package modelo;
 
 public class Pessoa {
 	
@@ -18,11 +19,6 @@ public class Pessoa {
 		this.cpf = cpf;
 	}
 	
-	public void atualizarDadosPessoa (Pessoa pessoa) {
-		
-		int linhaSelecionada = table.getSelectedRow();
-		listaPessoas.set(linhaSelecionada, pessoa); //atualizar dados das pessoas 
-		atualizarJtableModle();
-	}
+	
 
 }
