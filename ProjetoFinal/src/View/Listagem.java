@@ -10,11 +10,17 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class Listagem extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -45,6 +51,11 @@ public class Listagem extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("<-| Sair");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+			}
+		});
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(1, 50, 1));
 		btnNewButton.setBounds(10, 10, 85, 21);
@@ -62,7 +73,17 @@ public class Listagem extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(35, 172, 777, 262);
+		panel.setForeground(new Color(1, 50, 1));
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBounds(10, 157, 817, 291);
 		contentPane.add(panel);
+		
+		table = new JTable();
+		table.setForeground(new Color(1, 50, 1));
+		table.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.add(table);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		panel.add(scrollPane);
 	}
 }

@@ -93,7 +93,7 @@ public class Janela extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		labelNome = new JLabel("Nome");
-		labelNome.setBounds(29, 11, 46, 14);
+		labelNome.setBounds(20, 11, 46, 14);
 		contentPane.add(labelNome);
 		
 		txtNome = new JTextField();
@@ -102,7 +102,7 @@ public class Janela extends JFrame {
 		txtNome.setColumns(10);
 		
 		lblNewLabel = new JLabel("CPF");
-		lblNewLabel.setBounds(29, 61, 46, 14);
+		lblNewLabel.setBounds(20, 61, 46, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtCPF = new JTextField();
@@ -206,7 +206,7 @@ public class Janela extends JFrame {
 		contentPane.add(btnAlterar);
 		
 		JLabel lblTelefone = new JLabel("Telefone");
-		lblTelefone.setBounds(29, 35, 69, 14);
+		lblTelefone.setBounds(20, 37, 69, 14);
 		contentPane.add(lblTelefone);
 		
 		txtTelefone = new JTextField();
