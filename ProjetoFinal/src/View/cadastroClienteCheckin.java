@@ -162,6 +162,8 @@ public class cadastroClienteCheckin extends JFrame {
 				lblGenero.setFont(new Font("Tahoma", Font.PLAIN, 14));
 				
 				JComboBox comboBoxGenero = new JComboBox();
+				//adicionar as alternativas
+				
 				
 				JLabel lblNacionalidade = new JLabel("Nacionalidade:");
 				lblNacionalidade.setForeground(new Color(1, 50, 1));
@@ -264,7 +266,7 @@ public class cadastroClienteCheckin extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						//gerar o código
 						
-						
+						//String 
 						
 						
 					}
@@ -508,10 +510,6 @@ public class cadastroClienteCheckin extends JFrame {
 
 	    }
 
-
-
-	    @Override
-
 	    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
 
 	        Color oldColor = g.getColor();
@@ -524,19 +522,11 @@ public class cadastroClienteCheckin extends JFrame {
 
 	    }
 
-
-
-	    @Override
-
 	    public Insets getBorderInsets(Component c) {
 
 	        return new Insets(this.radius + 1, this.radius + 1, this.radius + 2, this.radius);
 
 	    }
-
-
-
-	    @Override
 
 	    public boolean isBorderOpaque() {
 
